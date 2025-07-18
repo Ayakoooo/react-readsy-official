@@ -4,6 +4,7 @@ import type { Route } from "./+types/root";
 import "./app.css";
 import { HeroUIProvider } from "@heroui/react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import AppNavbar from "./components/shared/Navbar";
 
 export const links: Route.LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -42,6 +43,7 @@ export default function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <HeroUIProvider>
+        <AppNavbar />
         <Outlet />
       </HeroUIProvider>
     </QueryClientProvider>

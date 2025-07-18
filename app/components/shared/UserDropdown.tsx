@@ -1,9 +1,9 @@
 import { Dropdown, DropdownTrigger, Avatar, DropdownMenu, DropdownSection, DropdownItem, user, Button } from "@heroui/react";
-import { UserIcon, HomeIcon } from "lucide-react";
 import { FavoriteIcon, SignOutIcon } from "./Navbar";
 import { Link as RouterLink } from "react-router";
 import { supabase } from "~/supabase-client";
 import type { User } from "@supabase/supabase-js";
+import { Icon } from "@iconify/react";
 
 type Props = {
   user: User;
@@ -29,22 +29,22 @@ export default function UserDropdown({ user }: Props) {
     >
       <DropdownTrigger>
         <button className="cursor-pointer">
-          <Avatar size="sm" isBordered showFallback src="https://images.unsplash.com/broken" />
+          <Avatar size="sm" isBordered showFallback src="https://api.dicebear.com/7.x/initials/svg?seed=John+Doe" />
         </button>
       </DropdownTrigger>
       <DropdownMenu>
         <DropdownSection>
-          <DropdownItem key="profile" startContent={<UserIcon />}>
+          <DropdownItem key="profile" startContent={<Icon icon="system-uicons:user-male-circle" width={21} height={21} />}>
             {user.user_metadata.displayName}
           </DropdownItem>
         </DropdownSection>
         <DropdownSection title={"Linki"}>
-          <DropdownItem key="home" startContent={<HomeIcon />}>
+          <DropdownItem key="home" startContent={<Icon icon="system-uicons:home-door" width={21} height={21} />}>
             <RouterLink to="/" className="!text-foreground">
               Strona Główna
             </RouterLink>
           </DropdownItem>
-          <DropdownItem key="favorites" startContent={<FavoriteIcon />}>
+          <DropdownItem key="favorites" startContent={<Icon icon="system-uicons:heart" width={21} height={21} />}>
             <RouterLink to="/ulubione" className="!text-foreground">
               Ulubione
             </RouterLink>

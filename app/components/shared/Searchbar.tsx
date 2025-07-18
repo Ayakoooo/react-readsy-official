@@ -1,4 +1,4 @@
-import { Autocomplete, AutocompleteItem } from "@heroui/react";
+import { Autocomplete, Kbd, AutocompleteItem } from "@heroui/react";
 import { Icon } from "@iconify/react";
 import { useEffect, useRef } from "react";
 import type { FairyTaleType } from "~/types/types";
