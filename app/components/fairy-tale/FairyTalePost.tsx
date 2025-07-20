@@ -23,7 +23,7 @@ export default function FairyTalePost({ title, brief, imageSrc, url, createdAt }
           {title}
         </Link>
 
-        <p className=" text-gray-400 text-tiny md:text-md">{brief}</p>
+        <p className=" text-gray-400 text-tiny md:text-md line-clamp-3 sm:line-clamp-4 ">{brief}</p>
         <div className="flex justify-between items-center ">
           <Chip size="sm" radius="sm">
             {new Date(createdAt).toLocaleDateString("pl-PL")}
