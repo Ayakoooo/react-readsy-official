@@ -79,28 +79,6 @@ export default function FairyTale({ postData }: Props) {
             }).format(new Date(postData.created_at))}
           </p>
           <h1 className="font-bold text-2xl md:text-4xl">{postData.title}</h1>
-          {/* <div className="flex items-center gap-4 self-end">
-            <p className="text-foreground-600">Piotr Księżyk</p>
-            <Tooltip content={`${fakeFav ? "Usuń bajkę z ulubionych" : "Dodaj do ulubionych"}`} showArrow={true}>
-              <Button
-                isIconOnly
-                variant={fakeFav ? "solid" : "bordered"}
-                className="self-end"
-                onPress={() => {
-                  setFakeFav(!fakeFav);
-                  addToast({
-                    title: `${!fakeFav ? "Dodano bajke do ulubionych" : "Usunięto bajke z ulubionych"}`,
-                    timeout: 3000,
-                    shouldShowTimeoutProgress: true,
-                    color: `${!fakeFav ? "success" : "danger"}`,
-                    variant: "flat",
-                  });
-                }}
-              >
-                {fakeFav ? <Icon icon={"system-uicons:heart-remove"} width={21} height={21} /> : <Icon icon={"system-uicons:heart"} width={21} height={21} />}
-              </Button>
-            </Tooltip>
-          </div> */}
         </header>
         <ScrollShadow className="relative h-[500px]">
           <pre className="font-sans whitespace-pre-wrap break-words w-full">{postData.brief}</pre>
@@ -116,17 +94,6 @@ export default function FairyTale({ postData }: Props) {
           </Button>
         </ScrollShadow>
       </article>
-      {/* <section className="p-4 max-w-6xl  mx-auto flex justify-center items-center">
-        <Card isFooterBlurred className="border-none max-w-4xl w-full h-[60vh]" radius="sm">
-          <div className="w-full h-full bg-no-repeat bg-cover bg-top" style={{ backgroundImage: `url(${publicUrl})` }} />
-          <CardFooter className="justify-between before:bg-white/10 border-white/20 overflow-hidden py-1 md:py-4 absolute before:rounded-xl  bottom-0  shadow-small  z-10">
-            <h1 className="text-sm md:text-lg  text-white/80">{postData.title}</h1>
-            <Button startContent={<Icon icon={"system-uicons:heart"} width={18} height={18} />} className="text-tiny text-white " color="primary" radius="lg" size="sm" variant="flat" onPress={addToFavorites}>
-              <span className="hidden md:flex">Dodaj do ulubionych</span>
-            </Button>
-          </CardFooter>
-        </Card>
-      </section> */}
       <section className="max-w-4xl mx-auto mt-8 mb-4 px-4 md:px-0" ref={commentsSectionRef}>
         <div className="flex items-center justify-between ">
           <CommentForm submitLabel="Dodaj komentarz" postId={postData.id} onSubmitCallback={() => refetch?.()} />
@@ -136,11 +103,9 @@ export default function FairyTale({ postData }: Props) {
             </Badge>
           </div>
         </div>
-        <Divider className="my-4 " />
+        <Divider className="my-4" />
       </section>
       <CommentsList postId={postData.id} comments={comments} refetch={refetch} />
-      {/* <div className="bg-no-repeat bg-cover bg-center sm:w-[260px] min-h-[80vh] sm:fixed bg-black top-[55%] -translate-y-1/2 left-4" style={{ backgroundImage: `url("/pink.webp")` }} />
-      <div className="bg-no-repeat bg-cover bg-top sm:w-[260px] min-h-[80vh] sm:fixed bg-black top-[55%] -translate-y-1/2 right-4" style={{ backgroundImage: `url("/squirt.webp")` }} /> */}
     </main>
   );
 }

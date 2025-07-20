@@ -44,11 +44,11 @@ export default function UserDropdown({ user }: Props) {
               Strona Główna
             </RouterLink>
           </DropdownItem>
-          <DropdownItem key="favorites" startContent={<Icon icon="system-uicons:heart" width={21} height={21} />}>
+          {/* <DropdownItem key="favorites" startContent={<Icon icon="system-uicons:heart" width={21} height={21} />}>
             <RouterLink to="/ulubione" className="!text-foreground">
               Ulubione
             </RouterLink>
-          </DropdownItem>
+          </DropdownItem> */}
         </DropdownSection>
         <DropdownSection title="Akcje Użytkownika">
           <DropdownItem key="logout" startContent={<SignOutIcon />} color="danger" onClick={signOut}>

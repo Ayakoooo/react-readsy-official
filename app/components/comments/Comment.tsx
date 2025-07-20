@@ -43,7 +43,7 @@ export default function Comment({ refetchComments, comment, replies, className =
           <div className="flex items-center gap-2">
             <User
               avatarProps={{
-                src: "https://images.unsplash.com/broken",
+                src: "https://api.dicebear.com/7.x/initials/svg?seed=John+Doe",
                 showFallback: true,
               }}
               name={comment.username}
